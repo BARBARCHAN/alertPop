@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "アラートポップ",
+    "version": "1.0",
+    "description": "特定のサイトで警告を表示します",
+    "permissions": ["tabs", "scripting"],
+    "host_permissions": [
+      "https://barbartech.net/"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://barbartech.net/"],
+        "js": ["alert.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icon.png"
+      }
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
